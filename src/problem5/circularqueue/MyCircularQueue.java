@@ -30,4 +30,11 @@ public class MyCircularQueue {
             System.out.println("Queue is full.");
         }
     }
+    private boolean isEmpty(){
+        return size==0;
+    }
+
+    private boolean isFull(){
+        return size==maxSize;
+    }
 }
