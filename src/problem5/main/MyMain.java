@@ -14,5 +14,14 @@ public class MyMain {
         myCircularQueue.enQueue(new Student("T", 0, 0));
         myCircularQueue.enQueue(new Student("Y", 1, 1));
         myCircularQueue.enQueue(new Student("D", 1, 0));
+
+        for(int i=0;i<myCircularQueue.getSize()+1;i++){
+            Student s = myCircularQueue.deQueue();
+//            System.out.println(s);
+            if(s.getBackLog()-s.getAppearingCount()!=0){
+                myCircularQueue.enQueue(s);
+            }
+        }
+        myCircularQueue.show();
     }
 }
