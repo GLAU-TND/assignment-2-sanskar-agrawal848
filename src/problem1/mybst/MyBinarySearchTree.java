@@ -163,6 +163,29 @@ public class MyBinarySearchTree {
         }
         return null;
     }
+    public TreeNode preOrderSuccessor(int value){
+        TreeNode node = search(value);
+        if (node == null){
+            return null;
+        }
+        if(node.getLeftChild() != null){
+            return node.getLeftChild();
+        }
+        else if (node.getRightChild() != null){
+            return node.getRightChild();
+        }
+        else {
+            TreeNode temp = node.getParent();
+            while (temp != null){
+                if(value < temp.getData() && temp.getRightChild() != null){
+                    break;
+                }
+                temp = temp.getParent();
+            }
+            return temp != null ? temp.getRightChild() : null;
+        }
+    }
+
     public TreeNode getRoot(){
         return root;
     }
