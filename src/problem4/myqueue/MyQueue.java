@@ -51,5 +51,13 @@ public class MyQueue<T> {
             catch (Exception e){}
         }
     }
+    public void printQueue(){
+        Element current = front;
+        System.out.println("\n     Nodes      "+"  preOrderSuccessor");
+        while (current != null){
+            System.out.println(current.getNode() +"  ->  "+current.getPreOrderSuccessor());
+            current = current.getNext();
+        }
+    }
 
 }
