@@ -32,5 +32,12 @@ public class Student {
     public void setRoll(int roll) {
         this.roll = roll;
     }
-
+    @Override
+    public String toString() {
+        return "Student{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", roll=" + roll +
+                '}';
+    }
 }
