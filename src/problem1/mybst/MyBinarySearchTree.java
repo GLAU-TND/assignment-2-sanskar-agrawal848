@@ -139,6 +139,30 @@ public class MyBinarySearchTree {
             preOrderTraversal(current.getRightChild());
         }
     }
+    public TreeNode search(int value){
+        if(isEmpty()){
+            //System.out.println("Tree is Empty");
+            return null;
+        }
+        return search(root,value);
+    }
+
+    private TreeNode search(TreeNode current,int value){
+        if(current.getData() ==  value){
+            return current;
+        }
+        else if (value < current.getData()){
+            if(current.getLeftChild() != null){
+                return search(current.getLeftChild(),value);
+            }
+        }
+        else {
+            if(current.getRightChild() != null){
+                return search(current.getRightChild(),value);
+            }
+        }
+        return null;
+    }
     public TreeNode getRoot(){
         return root;
     }
