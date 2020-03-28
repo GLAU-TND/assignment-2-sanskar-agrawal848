@@ -20,4 +20,17 @@ public class MyQueue<T> {
     public MyQueue(MyBinarySearchTree tree){
         this.tree = tree;
     }
+    public <T>void add(Element ele){
+        if(isEmpty()){
+            front = ele;
+            back = ele;
+        }
+        else {
+            back.setNext(ele);
+            back = ele;
+        }
+    }
+    public boolean isEmpty(){
+        return front == null;
+    }
 }
