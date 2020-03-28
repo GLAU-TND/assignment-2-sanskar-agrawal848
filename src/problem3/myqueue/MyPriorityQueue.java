@@ -8,7 +8,7 @@ package problem3.myqueue;
 import problem3.node.Node;
 
 import java.util.NoSuchElementException;
-public class MyPriorityQueue {
+public class MyPriorityQueue<T> {
     private Node front;
     private Node back;
 
@@ -28,6 +28,15 @@ public class MyPriorityQueue {
             node.setNext(previous.getNext());
             previous.setNext(node);
         }
+    }
+
+    public T deQueue(){
+        if(isEmpty()){
+            throw new NoSuchElementException();
+        }
+        Node removeNode = front;
+        front = front.getNext();
+        return (T)removeNode.getData();
     }
     public boolean isEmpty(){
         return front == null;
