@@ -38,6 +38,13 @@ public class MyPriorityQueue<T> {
         front = front.getNext();
         return (T)removeNode.getData();
     }
+    public void printQueue(){
+        Node current = front;
+        while(current != null){
+            System.out.println(current);
+            current = current.getNext();
+        }
+    }
     public boolean isEmpty(){
         return front == null;
     }
