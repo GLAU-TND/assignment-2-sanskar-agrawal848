@@ -39,4 +39,11 @@ public class TreeNode {
         this.rightChild = rightChild;
     }
 
+    public TreeNode getParent() {
+        return parent;
+    }
+
+    public void setParent(TreeNode parent) {
+        this.parent = parent;
+    }
 }
