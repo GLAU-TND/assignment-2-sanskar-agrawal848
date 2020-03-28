@@ -121,6 +121,24 @@ public class MyBinarySearchTree {
         }
         System.out.println("data = "+current.getData());
     }
+    public void preOrderTraversal(){
+        if(isEmpty()){
+            System.out.println("tree is empty");
+        }
+        else {
+            preOrderTraversal(root);
+        }
+    }
+
+    private void preOrderTraversal(TreeNode current){
+        System.out.println("data = "+current.getData());
+        if(current.getLeftChild() != null){
+            preOrderTraversal(current.getLeftChild());
+        }
+        if(current.getRightChild() != null){
+            preOrderTraversal(current.getRightChild());
+        }
+    }
     public TreeNode getRoot(){
         return root;
     }
